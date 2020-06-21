@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+pipenv run django-admin startproject mysite
+
