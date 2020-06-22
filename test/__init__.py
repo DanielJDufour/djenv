@@ -26,3 +26,8 @@ class TestEnvSettings(TestCase):
         statement = '''DJANGO_ALLOWED_HOSTS='["127.0.0.1", "localhost"]' pipenv run python3 test/mysite/manage.py diffsettings | grep ALLOWED_HOSTS'''
         output = check_output(statement, shell=True, text=True)
         self.assertEqual(output.strip(), "ALLOWED_HOSTS = ['127.0.0.1', 'localhost']")
+
+    def test_loading_python_path(self):
+        statement = '''DJANGO_EMAIL_BACKEND='django.core.mail.backends.filebased.EmailBackend' pipenv run python3 test/mysite/manage.py diffsettings | grep EMAIL_BACKEND'''
+        output = check_output(statement, shell=True, text=True)
+        self.assertEqual(output.strip(), "EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'")
