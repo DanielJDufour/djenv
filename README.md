@@ -6,6 +6,16 @@ Load Django Settings Directly from Environmental Variables
 - prevent hard-coding of Django settings
 - works great with Docker
 
+# install
+### with pip
+```bash
+pip install djenv
+```
+### with pipenv
+```bash
+pipenv install djenv
+```
+
 # basic usage
 ```python3
 # inside settings.py
