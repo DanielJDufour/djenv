@@ -20,7 +20,7 @@ class TestEnvSettings(TestCase):
     def test_loading_nested_json_values(self):
         statement = '''DJANGO_DATABASES='{ "default": { "ENGINE": "django.db.backends.sqlite3", "NAME": "test.sqlite3" } }' pipenv run python3 test/mysite/manage.py diffsettings | grep DATABASES'''
         output = check_output(statement, shell=True, text=True)
-        self.assertEqual(output.strip(), "DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'test.sqlite3', 'ATOMIC_REQUESTS': False, 'AUTOCOMMIT': True, 'CONN_MAX_AGE': 0, 'OPTIONS': {}, 'TIME_ZONE': None, 'USER': '', 'PASSWORD': '', 'HOST': '', 'PORT': '', 'TEST': {'CHARSET': None, 'COLLATION': None, 'NAME': None, 'MIRROR': None}}}")
+        self.assertEqual(output.strip(), "DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'test.sqlite3', 'ATOMIC_REQUESTS': False, 'AUTOCOMMIT': True, 'CONN_MAX_AGE': 0, 'OPTIONS': {}, 'TIME_ZONE': None, 'USER': '', 'PASSWORD': '', 'HOST': '', 'PORT': '', 'TEST': {'CHARSET': None, 'COLLATION': None, 'MIGRATE': True, 'MIRROR': None, 'NAME': None}}}")
 
     def test_loading_json_list_values(self):
         statement = '''DJANGO_ALLOWED_HOSTS='["127.0.0.1", "localhost"]' pipenv run python3 test/mysite/manage.py diffsettings | grep ALLOWED_HOSTS'''
