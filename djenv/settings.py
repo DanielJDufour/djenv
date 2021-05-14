@@ -13,7 +13,7 @@ for k in os.environ:
                 if ((v.startswith("{") and v.endswith("}")) or (v.startswith("[") and v.endswith("]"))):
                     v = json.loads(v)
 
-            locals()[k.replace("DJANGO_", "")] = v
+            globals()[k.replace("DJANGO_", "")] = v
 
 del k
 del json
