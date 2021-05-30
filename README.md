@@ -31,7 +31,7 @@ DJANGO_DEBUG=False python3 manage.py runserver
 Will set DEBUG=False in the settings.py
 
 # advanced usage
-You can also replace nested settings like DATABASES by setting a JSON file
+You can also replace nested settings like DATABASES by setting a JSON
 ```bash
 DJANGO_DATABASES='{ "default": { "ENGINE": "django.db.backends.sqlite3", "NAME": "db.sqlite3" } }'  python3 manage.py runserver
 ```
