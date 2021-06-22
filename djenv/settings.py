@@ -4,7 +4,7 @@ import re
 import simple_env as se
 
 for k in os.environ:
-    if k not in ['SETTINGS_MODULE']:
+    if k not in ['DJANGO_SETTINGS_MODULE']:
         if re.match(r'^DJANGO_[A-Z][A-Z_]+[A-Z]$', k):
             v = se.get(k)
 
