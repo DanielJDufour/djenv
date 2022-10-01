@@ -3,6 +3,8 @@ import os
 import re
 import simple_env as se
 
+v = None
+
 for k in os.environ:
     if k not in ['DJANGO_SETTINGS_MODULE']:
         if re.match(r'^DJANGO_[A-Z][A-Z_]+[A-Z]$', k):

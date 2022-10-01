@@ -31,3 +31,7 @@ class TestEnvSettings(TestCase):
         statement = '''DJANGO_EMAIL_BACKEND='django.core.mail.backends.filebased.EmailBackend' pipenv run python3 test/mysite/manage.py diffsettings | grep EMAIL_BACKEND'''
         output = check_output(statement, shell=True, text=True)
         self.assertEqual(output.strip(), "EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'")
+
+    def test_unused(self):
+        statement = '''pipenv run python3 test/mysite/manage.py diffsettings'''
+        check_output(statement, shell=True, text=True)
