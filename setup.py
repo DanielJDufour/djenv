@@ -11,7 +11,7 @@ setup(
   packages = ['djenv'],
   package_dir = {'djenv': 'djenv'},
   package_data = {'djenv': ['__init__.py']},
-  version = '0.0.4',
+  version = '0.0.5',
   description = 'DjEnv (Django + Environment): Load Django Settings from Environmental Variables',
   long_description = long_description,
   long_description_content_type='text/markdown',
@@ -21,6 +21,7 @@ setup(
   download_url = 'https://github.com/DanielJDufour/djenv/tarball/download',
   keywords = ['auto', 'automate', 'conf', 'configure', 'env', 'environment', 'django', 'loader', 'settings'],
   classifiers = [
+    'Development Status :: 5 - Production/Stable',
     'Programming Language :: Python :: 3',
     'Operating System :: OS Independent'
   ],
