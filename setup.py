@@ -11,7 +11,7 @@ setup(
   packages = ['djenv'],
   package_dir = {'djenv': 'djenv'},
   package_data = {'djenv': ['__init__.py']},
-  version = '0.0.5',
+  version = '0.0.6',
   description = 'DjEnv (Django + Environment): Load Django Settings from Environmental Variables',
   long_description = long_description,
   long_description_content_type='text/markdown',
